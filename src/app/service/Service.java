@@ -1,5 +1,6 @@
 package app.service;
 
+import app.comparators.CarComparatorByPrice;
 import app.model.Car;
 
 import java.util.*;
@@ -113,23 +114,6 @@ public class Service{
 
     }
 
-//    public int min() {
-//
-//        if (list.isEmpty()) {
-//            System.out.println("Error.Empty list");
-//            return -1;
-//        } else {
-//
-//            boolean flag = false;
-//
-//            while (flag == false) {
-//                flag = true;
-//                if(comp)
-//            }
-//
-//        }
-//    }
-
     public int indexOf(Car o) {
 
         ListIterator<Car> it = list.listIterator();
@@ -140,7 +124,7 @@ public class Service{
             currentCar = it.next();
 
             if (currentCar.equals(o)) {
-                System.out.println(index);
+                System.out.println("index: " + index);
                 return index;
             }
             index++;
@@ -166,7 +150,7 @@ public class Service{
 
             index++;
         }
-        System.out.println(lastIndex);
+        System.out.println("lastIndex: " + lastIndex);
         return lastIndex;
     }
 }

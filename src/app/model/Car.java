@@ -115,9 +115,9 @@ public class Car  implements Comparable<Car>{
 
     @Override
     public int compareTo(Car o) {
-        if(o.anFabricatie>this.anFabricatie){
+        if (o.anFabricatie < this.anFabricatie) {
             return  1;
-        }else if(o.anFabricatie<this.anFabricatie) {
+        } else if (o.anFabricatie > this.anFabricatie) {
             return -1;
         }
         return 0;
