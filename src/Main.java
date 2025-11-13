@@ -80,6 +80,11 @@ public class Main {
         System.out.println("bs:");
         sc.binarySearch();
         sc.reverse();
+        sc.shuffle();
+        sc.swap();
+        sc.rotate();
+        sc.singleton();
+
 
 
 

@@ -21,7 +21,21 @@ public class ServiceCollections {
         Collections.reverse(collectionsList);
     }
 
-    public void shuffle() {}
+    public void shuffle() {
+        Collections.shuffle(collectionsList);
+    }
+
+    public void swap() {
+        Collections.swap(collectionsList, 1, 2);
+    }
+
+    public void rotate() {
+        Collections.rotate(collectionsList, 2);
+    }
+
+    public void singleton() {
+        Collections.singletonList(collectionsList);
+    }
 
     public void min() {
 
