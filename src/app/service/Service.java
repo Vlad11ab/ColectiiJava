@@ -2,12 +2,15 @@ package app.service;
 
 import app.comparators.CarComparatorByPrice;
 import app.model.Car;
+import app.model.User;
 
 import java.util.*;
 
 public class Service{
 
     public List<Car> list = new ArrayList<>();
+
+    Map<User,List<Car>>  map = new TreeMap<>();
 
     public void addLast(Car car){
 
@@ -153,4 +156,62 @@ public class Service{
         System.out.println("lastIndex: " + lastIndex);
         return lastIndex;
     }
+
+    public void showKeys() {
+        System.out.println("Keys:");
+
+        if (map.isEmpty()) {
+            System.out.println("Error.Emtpy list");
+            return;
+        }
+
+        Iterator<User> it = map.keySet().iterator();
+        User currentCarPossesor;
+
+        while (it.hasNext()) {
+            currentCarPossesor = it.next();
+            System.out.println(currentCarPossesor);
+        }
+
+    }
+
+    public void showValues() {
+        System.out.println("Values: ");
+
+        if (map.isEmpty()) {
+            System.out.println("Error.Empty list");
+            return;
+        }
+
+        Iterator<List<Car>> it = map.values().iterator();
+        List<Car> currentCar;
+
+        while (it.hasNext()) {
+            currentCar = it.next();
+            System.out.println(currentCar);
+        }
+    }
+
+    public void showEntries() {
+        System.out.println("Entries: ");
+
+        if (map.isEmpty()) {
+            System.out.println("Error.Empty list");
+            return;
+        }
+
+
+        Iterator<Map.Entry<User, List<Car>>> it = map.entrySet().iterator();
+
+        while (it.hasNext()) {
+
+            Map.Entry<User, List<Car>> pair = it.next();
+
+
+            System.out.println("[" + pair.getKey() + "," + pair.getValue() + "]");
+        }
+}
+
+//todo: view, load, cautimasinaspecifica(ce user are) etc.
+    
 }

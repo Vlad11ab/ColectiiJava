@@ -1,3 +1,4 @@
+import app.MapExamples;
 import app.model.Car;
 import app.ListExamples;
 import app.service.Service;
@@ -85,6 +86,13 @@ public class Main {
         sc.rotate();
         sc.singleton();
 
+
+        System.out.println("TreeMapExample");
+        MapExamples me = new MapExamples();
+        me.exempluAdaugareSiParcurgere();
+        me.showKeys();
+        me.showValues();
+        me.showEntries();
 
 
 
