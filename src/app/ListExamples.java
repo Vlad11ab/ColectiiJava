@@ -1,6 +1,6 @@
 package app;
 
-import app.model.Car;
+import app.car.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;

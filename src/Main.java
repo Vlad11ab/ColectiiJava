@@ -1,8 +1,17 @@
 import app.MapExamples;
-import app.model.Car;
+import app.RepositoryMapExample;
+import app.RepositoryMapExampleImpl;
+import app.car.model.Car;
 import app.ListExamples;
-import app.service.Service;
-import app.service.ServiceCollections;
+//import app.car.service.CarCommandService;
+//import app.car.service.CarCommandServiceImpl;
+//import app.car.service.CarQueryService;
+//import app.car.service.CarQueryServiceImpl;
+import app.service.*;
+import app.users.model.User;
+import app.view.ViewLogin;
+//import app.users.service.UserQueryService;
+//import app.users.service.UserQueryServiceImpl;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -32,7 +41,7 @@ public class Main {
                 .model("Jetta")
                                 .build();
 
-        Car c100 = new Car(100, "Beetle", "rosu",2010,10000);
+        Car c100 = Car.builder().id(100).model("Beetle").culoare("rosu").price(10000).anFabricatie(2010).build();
 
         ListExamples.ex1();
 
@@ -52,23 +61,23 @@ public class Main {
         le.remove(c3);
 
         System.out.println("Created Service");
-        Service service = new Service();
-
-        service.addLast(c1);
-        service.addStart(c2);
-        service.addPos(c3,3);
-        service.removeStart();
-        service.removeLast();
-        service.showList();
-        service.indexOf(c3);
-        service.addStart(c2);
-        service.addLast(c2);
-        service.lastIndexOf(c2);
-        service.addLast(c2);
-        service.addLast(c1);
-        service.indexOf(c1);
-        service.lastIndexOf(c1);
-        service.remove(c3);
+//        Service service = new Service();
+//
+//        service.addLast(c1);
+//        service.addStart(c2);
+//        service.addPos(c3,3);
+//        service.removeStart();
+//        service.removeLast();
+//        service.showList();
+//        service.indexOf(c3);
+//        service.addStart(c2);
+//        service.addLast(c2);
+//        service.lastIndexOf(c2);
+//        service.addLast(c2);
+//        service.addLast(c1);
+//        service.indexOf(c1);
+//        service.lastIndexOf(c1);
+//        service.remove(c3);
 
         System.out.println("Created ServiceCollections");
         ServiceCollections sc = new ServiceCollections();
@@ -93,6 +102,25 @@ public class Main {
         me.showKeys();
         me.showValues();
         me.showEntries();
+
+        System.out.println("=================================");
+
+
+
+        RepositoryMapExample repo = new RepositoryMapExampleImpl();
+        User user = User.builder().id(1003)
+                        .age(30)
+                .firstName("Matei")
+                        .lastName("Chiru")
+                                .username("Matei")
+                                        .password("MateiParola").build();
+
+ //        System.out.println(repo.getCarByUser(repo.getUserById(1000))); //testing
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 package app.comparators;
 
-import app.model.Car;
+import app.car.model.Car;
 
 import java.util.Comparator;
 

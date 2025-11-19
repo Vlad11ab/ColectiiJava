@@ -1,4 +1,4 @@
-package app.model;
+package app.users.model;
 
 public class User {
     private int id;
@@ -83,31 +83,38 @@ public class User {
         private String username;
         private String password;
 
-        public Builder id() {
+        public Builder id(int id) {
             this.id = id;
             return this;
 
         }
-        public Builder firstName() {
+        public Builder firstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
-        public Builder lastName() {
+        public Builder lastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
-        public Builder age() {
+        public Builder age(int age) {
             this.age = age;
             return this;
         }
-        public Builder username() {
+        public Builder username(String username) {
             this.username = username;
             return this;
         }
-        public Builder password() {
+        public Builder password(String password) {
             this.password = password;
             return this;
         }
+        public User build () {
+            return new User(this);
+        }
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
 

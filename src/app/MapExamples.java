@@ -1,10 +1,8 @@
 package app;
 
-import app.model.Car;
-import app.model.User;
-import app.service.Service;
+import app.car.model.Car;
+import app.users.model.User;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class MapExamples {

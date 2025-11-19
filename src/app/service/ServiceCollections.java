@@ -1,7 +1,7 @@
 package app.service;
 
 import app.comparators.CarComparatorByPrice;
-import app.model.Car;
+import app.car.model.Car;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +14,7 @@ public class ServiceCollections {
     public void binarySearch() {
 
         Collections.sort(collectionsList);
-        System.out.println(Collections.binarySearch(collectionsList, new Car(100, "Beetle", "rosu",2000,10000)));
+//        System.out.println(Collections.binarySearch(collectionsList, new Car(100, "Beetle", "rosu",2000,10000)));
     }
 
     public void reverse() {

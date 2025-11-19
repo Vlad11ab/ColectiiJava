@@ -1,23 +1,36 @@
-package app.model;
+package app.car.model;
 
-public class Car  implements Comparable<Car>{
+public class Car implements Comparable<Car>{
     private int id;
+    private int userId;
     private String model;
     private String culoare;
     private int anFabricatie;
     private int price;
 
-    public Car(int id, String model, String culoare, int anFabricatie, int price){
+    public Car(int id, int userId, String model, String culoare, int anFabricatie, int price){
         this.id = id;
+        this.userId = userId;
         this.model = model;
         this.culoare = culoare;
         this.anFabricatie = anFabricatie;
         this.price = price;
     }
 
+    public Car(String text) {
+        String [] tokens = text.split(",");
+        this.id = Integer.parseInt(tokens[0]);
+        this.userId = Integer.parseInt(tokens[1]);
+        this.model = tokens[2];
+        this.culoare = tokens[3];
+        this.anFabricatie = Integer.parseInt(tokens[4]);
+        this.price =  Integer.parseInt(tokens[5]);
+    }
+
 
     private Car(Builder builder){
         this.id = builder.id;
+        this.userId = builder.userId;
         this.model = builder.model;
         this.culoare = builder.culoare;
         this.anFabricatie = builder.anFabricatie;
@@ -30,6 +43,7 @@ public class Car  implements Comparable<Car>{
 
     public static class Builder{
         private int id;
+        private int userId;
         private String model;
         private String culoare;
         private int anFabricatie;
@@ -37,6 +51,11 @@ public class Car  implements Comparable<Car>{
 
         public Builder id(int id){
             this.id = id;
+            return this;
+        }
+
+        public Builder userId(int userId){
+            this.userId = userId;
             return this;
         }
 
@@ -68,6 +87,9 @@ public class Car  implements Comparable<Car>{
     public void setId(int id){
         this.id = id;
     }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
     public void setModel(String model){
         this.model = model;
     }
@@ -84,6 +106,9 @@ public class Car  implements Comparable<Car>{
     public int getId(){
         return id;
     }
+    public int getUserId() {
+        return userId;
+    }
     public String getModel(){
         return model;
     }
@@ -99,7 +124,7 @@ public class Car  implements Comparable<Car>{
 
     @Override
     public String toString(){
-        return "id: " + this.id + "model: " + this.model + "culoare: " + this.culoare + "anFabricatie: " + this.anFabricatie + "price: " + this.price;
+        return "id: " + this.id + "userId: " + this.userId + "model: " + this.model + "culoare: " + this.culoare + "anFabricatie: " + this.anFabricatie + "price: " + this.price;
     }
 
     @Override
