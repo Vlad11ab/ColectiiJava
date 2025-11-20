@@ -48,13 +48,13 @@ public class ViewLogin {
     }
 
     private void select1() {
-        System.out.println("Username:");
-        String username = scanner.nextLine();
-        System.out.println("Password:");
-        String password = scanner.nextLine();
-
-        User user = commandService.getUserForLogin(username,password);
-//        ViewCustomer viewCustomer = new ViewCustomer();
+//        System.out.println("Username:");
+//        String username = scanner.nextLine();
+//        System.out.println("Password:");
+//        String password = scanner.nextLine();
+//
+//        User user = commandService.getUserForLogin(username,password);
+////        ViewCustomer viewCustomer = new ViewCustomer();
 
     }
     private void select2() {
